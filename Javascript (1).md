@@ -859,14 +859,14 @@ function numberToString(num) {
 
 ## IIFE (Immediately Invoked Function Expressions)
 
-IIFE is a JS function that run as soon as the function declared
+IIFE is a JS function that run as soon as the function declared.
+An IIFE (Immediately Invoked Function Expression) in JavaScript is a function that runs as soon as it is defined. It is a design pattern often used to create a local scope to avoid polluting the global scope.
 
-```js
-(function () {
-  var a = 3;
-  console.log(3);
+(function() {
+  // Code inside this function will execute immediately
+  console.log("IIFE executed!");
 })();
-```
+In this example, the function is defined and immediately invoked. This pattern helps in encapsulating code and maintaining modularity, especially in large applications.
 
 ## Generator Functions
 
@@ -2493,6 +2493,89 @@ Use Throttling when :
 * Fetching data from an API or a database when the user scrolls, resizes, or types
 * Updating or animating elements on the page when the user scrolls, resizes, or moves the mouse
 * Logging or tracking user actions or events when they occur frequently
+
+ #What is an API?
+ 
+An API is a set of protocols and tools that allows different software applications to communicate with each other. It acts as an intermediary, enabling the exchange of data and functionalities between systems without needing to understand their internal workings. For example, when you use a rideshare app, it interacts with various APIs to retrieve data from servers and present it to you in a user-friendly manner 12.
+
+* Key Characteristics of APIs
+ Standardization: Modern APIs typically adhere to standards like HTTP and REST, making them developer-friendly and easier to use 13.
+ Security: APIs include measures like authorization credentials and API gateways to limit access and protect data 24.
+ Documentation: Well-designed APIs come with comprehensive documentation that outlines how to use them effectively, including methods for data manipulation such 
+ as GET, POST, PUT, and DELETE 5.
+
+* Types of APIs
+ Public APIs: Open for use by any developer.
+ Partner APIs: Shared with specific business partners.
+ Private APIs: Used internally within an organization.
+ Composite APIs: Combine multiple endpoints into a single call 2.
+
+* How APIs Work
+ APIs operate on a client-server model:
+ The client sends a request to the API.
+ The API processes this request and communicates with the server.
+ The server responds back through the API, which then sends the data to the client.
+
+
+##What are Web APIs?
+
+Web APIs are application programming interfaces designed specifically for use in web browsers. They enable developers to access and manipulate browser features and external resources seamlessly. This makes it easier to create dynamic and interactive web applications.
+Key Types of Web APIs
+
+Browser APIs: These are built into the web browser and provide functionalities for tasks like manipulating the Document Object Model (DOM), handling multimedia, and interacting with storage.
+
+DOM API: Allows manipulation of HTML and XML documents.
+Fetch API: Used for making network requests to retrieve resources.
+
+Geolocation API: Provides location information about the user's device.
+Server APIs: These allow interaction with server-side resources, typically through HTTP requests. Common examples include RESTful APIs that provide access to data on a server.
+
+Third-party APIs: Offered by external services, these APIs enable integration with platforms like social media, payment gateways, or data services (e.g., Twitter API, Google Maps API).
+
+* Commonly Used Web APIs
+
+1. Fetch API
+The Fetch API is widely used for making asynchronous network requests. It returns a promise that resolves to the response of the request.
+Example:
+javascript
+fetch('https://jsonplaceholder.typicode.com/posts')
+    .then(response => response.json())
+    .then(data => console.log(data));
+
+2. DOM Manipulation
+The DOM API allows you to manipulate HTML elements dynamically.
+Example:
+javascript
+document.querySelector('.my-class').textContent = 'Hello, World!';
+
+3. Geolocation API
+This API provides access to the user’s geographical location.
+Example:
+javascript
+navigator.geolocation.getCurrentPosition(position => {
+    console.log(`Latitude: ${position.coords.latitude}, Longitude: ${position.coords.longitude}`);
+});
+
+4. Web Storage API
+The Web Storage API provides methods for storing data in the browser, either in local storage or session storage.
+Example:
+javascript
+localStorage.setItem('key', 'value');
+const value = localStorage.getItem('key');
+console.log(value); // Output: value
+
+5. Canvas API
+The Canvas API allows for dynamic, scriptable rendering of 2D shapes and bitmap images.
+
+Example:
+javascript
+const canvas = document.getElementById('myCanvas');
+const ctx = canvas.getContext('2d');
+ctx.fillStyle = 'red';
+ctx.fillRect(20, 20, 150, 100);
+
+ 
+
 
 ##Lazy loading
 
